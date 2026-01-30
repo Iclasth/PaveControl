@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/PaveControl/">
+    <Project Path="PaveControl/PaveControl.csproj" />
+  </Folder>
+</Solution>
