@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using PaveControl.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// DbContext configuration
+builder.Services.AddDbContext<PaveControlDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PaveControlConnection")));
 
 var app = builder.Build();
 

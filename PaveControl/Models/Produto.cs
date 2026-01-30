@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PaveControl.Models
 {
@@ -12,6 +13,7 @@ namespace PaveControl.Models
 
         [Required(ErrorMessage = "Informe o preço do produto")]
         [Display(Name = "Preço da venda")]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Preco { get; set; }
 
         [Display(Name = "Quantidade em Estoque")]
