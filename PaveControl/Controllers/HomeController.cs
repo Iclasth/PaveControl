@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using PaveControl.Data;
 using PaveControl.Models;
 
 namespace PaveControl.Controllers
@@ -7,15 +8,17 @@ namespace PaveControl.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly PaveControlDbContext _context;
+        public HomeController(ILogger<HomeController> logger, PaveControlDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var produtos = _context.Produtos.ToList();
+            return View(produtos);
         }
 
         public IActionResult Privacy()

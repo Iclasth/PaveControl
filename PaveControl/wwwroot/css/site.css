@@ -1,3 +1,10 @@
+:root {
+    --chocolate-escuro: #8B4513;
+    --amarelo-destaque: #FFC107;
+    --creme-fundo: #F8F9FA;
+    --texto-marrom: #5D2E0A;
+}
+
 html {
   font-size: 14px;
 }
@@ -17,6 +24,33 @@ html {
   min-height: 100%;
 }
 
+
+
 body {
-  margin-bottom: 60px;
+        margin-bottom: 60px; /* Mantenha isso para o rodapé não cobrir o conteúdo */
+        background-color: var(--creme-fundo); /* Adicionado */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Adicionado */
+ }
+
+
+/* Estilo para os Cards de Pavê */
+.pave-card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: white; /* Garante que o card seja branco sobre o fundo creme */
+}
+
+.pave-card:hover {
+        transform: scale(1.05);
+}
+
+.btn-pave {
+    background-color: var(--amarelo-destaque);
+    color: var(--chocolate-escuro);
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 20px;
 }
