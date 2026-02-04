@@ -54,10 +54,25 @@ namespace PaveControl.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Preco,Estoque,Ativo")] Produto produto)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Preco,Estoque,Ativo")] Produto produto, IFormFile foto)
         {
             if (ModelState.IsValid)
             {
+                if(foto != null && foto.Length > 0)
+                {
+                    string pastaImagem = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+
+                    string nomeDoArquivo = Guid.NewGuid().ToString() + "_" + foto.FileName;
+
+                    string caminhoCompleto = Path.Combine(pastaImagem, nomeDoArquivo);
+
+                    using(var stream = new FileStream(caminhoCompleto, FileMode.Create))
+                    {
+                        await foto.CopyToAsync(stream);
+                    }
+
+                    produto.ImagemUrl = nomeDoArquivo;
+                }
                 _context.Add(produto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

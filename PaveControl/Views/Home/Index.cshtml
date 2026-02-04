@@ -20,7 +20,7 @@
             <div class="col-6 col-md-4 mb-4">
                 @* Col-6 para aparecer 2 por linha no celular *@
                 <div class="card pave-card h-100 border-0 shadow-sm">
-                    <img src="~/images/pave-exemplo.jpg" class="card-img-top p-2" style="border-radius: 20px;" alt="@item.Nome">
+                    <img src="~/images/@(string.IsNullOrEmpty(item.ImagemUrl) ? "Logo.jpeg" : item.ImagemUrl)" class="card-img-top p-2" style="border-radius: 20px; object-fit: cover; height: 200px;" alt="@item.Nome">
                     <div class="card-body text-center">
                         <h5 class="card-title" style="color: var(--texto-marrom);">@item.Nome</h5>
                         <h4 class="text-success">R$ @item.Preco.ToString("N2")</h4>
