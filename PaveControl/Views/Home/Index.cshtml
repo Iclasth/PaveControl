@@ -4,23 +4,28 @@
     ViewData["Title"] = "Cardápio de Pavês";
 }
 
-<div class="text-center py-4">
-    <img src="~/images/Logo.jpeg" alt="Logo Pavê no Pote" style="max-height: 150px;" />
-    <h2 class="mt-3" style="color: var(--chocolate-escuro); font-weight: 800;">SABORES DISPONÍVEIS:</h2>
+<div class="container-fluid p-0">
+    <div class="hero-section text-center  p-5" style="background: linear-gradient(rgba(0,0,0,0.5)rgba(0,0,0,0.5)), url('/images/Posts.jpeg'); background-size: cover; background-position: center;">
+        <img src="~/images/Logo.jpeg" alt="Logo Pavê no Pote" style="max-height: 150px;" />
+        <h1 class="display-6 fw-bold" style="color: var(--texto-marrom);">É PAVÊ, É PARA COMER E É PRA SE APAIXONAR!!</h1>
+        @* <p class="lead">Delivery Sexta, Sábados e Domingos - A partir das 08:00</p> *@
+     @* <h2 class="mt-3" style="color: var(--chocolate-escuro); font-weight: 800;">SABORES DISPONÍVEIS:</h2> *@
+    </div>
 </div>
 
-<div class="container">
+<div class="container my-5">
     <div class="row">
         @foreach (var item in Model)
         {
             <div class="col-6 col-md-4 mb-4">
                 @* Col-6 para aparecer 2 por linha no celular *@
-                <div class="card pave-card h-100">
+                <div class="card pave-card h-100 border-0 shadow-sm">
                     <img src="~/images/pave-exemplo.jpg" class="card-img-top p-2" style="border-radius: 20px;" alt="@item.Nome">
                     <div class="card-body text-center">
                         <h5 class="card-title" style="color: var(--texto-marrom);">@item.Nome</h5>
                         <h4 class="text-success">R$ @item.Preco.ToString("N2")</h4>
-                        <a href="#" class="btn btn-pave w-100">ADICIONAR 🛒</a>
+
+                        <button onclick="enviarWhatsapp('@item.Nome', '@item.Preco')" class="btn btn-pave w-100 shadow-sm">PEDIR AGORA 🛒</button>
                     </div>
                 </div>
             </div>
@@ -28,6 +33,19 @@
     </div>
 </div>
 
-<div class="fixed-bottom p-3 text-center" style="background-color: var(--chocolate-escuro);">
-    <button class="btn btn-pave btn-lg shadow">FAÇA JÁ O SEU PEDIDO! 📱</button>
+<div class="fixed-bottom p-3 text-center" style="background-color: var(--chocolate-escuro); color: var(--amarelo-destaque);">
+    <p class="lead ">FAÇA JÁ O SEU PEDIDO! 📱</p>
+    <a href="https://wa.me/SEUNUMERO" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="60" />
+    </a>
 </div>
+
+<script>
+    function enviarWhatsapp(nomePave, precoPave){
+        const telefone = "SEUNUMERO"; // Substitua pelo seu número de telefone com código do país e DDD
+        const mensagem = `Olá! Vim pelo site e gostaria de pedir um pavê de ${nomePave} no valor de R$ ${precoPave}.`;
+
+        const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+        window.open(url, '_blank');
+    }
+</script>
