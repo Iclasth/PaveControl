@@ -1,5 +1,7 @@
 using System.Diagnostics;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PaveControl.Data;
 using PaveControl.Models;
 
@@ -15,9 +17,9 @@ namespace PaveControl.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var produtos = _context.Produtos.ToList();
+            var produtos = await  _context.Produtos.Where(p => p.Ativo).ToListAsync();
             return View(produtos);
         }
 
