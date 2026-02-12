@@ -27,6 +27,26 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Features.FormOptions>(optio
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        // Pega o seu contexto de banco de dados
+        var context = services.GetRequiredService<PaveControlDbContext>();
+
+        // Comando que força a criação do banco e das tabelas na Azure
+        context.Database.Migrate();
+
+        Console.WriteLine("Banco de dados sincronizado com sucesso!");
+    }
+    catch (Exception ex)
+    {
+        // Se houver erro, ele será ignorado para o site não travar
+        Console.WriteLine("Erro ao sincronizar banco: " + ex.Message);
+    }
+}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

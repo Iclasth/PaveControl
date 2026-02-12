@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/.config/">
+    <File Path="PaveControl/dotnet-tools.json" />
+  </Folder>
   <Folder Name="/PaveControl/">
     <Project Path="PaveControl/PaveControl.csproj" />
   </Folder>
