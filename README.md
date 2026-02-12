@@ -71,17 +71,3 @@ Neste projeto, superei desafios reais de infraestrutura de nuvem, incluindo:
 * Implementação de rotinas automáticas de migração de banco de dados via código no `Program.cs`.
 
 ```
-
----
-
-### 💡 Dicas de Ouro para o GitHub:
-
-1.  **Screenshots:** Tire 2 ou 3 fotos do sistema funcionando (uma da home e uma do cadastro) e coloque uma pasta chamada `img` no seu repositório. Use o comando `![Descrição](img/foto.png)` no README para exibi-las. Recrutadores **amam** ver o visual antes de ler o código.
-2.  **GIF de Demonstração:** Se puder, use uma ferramenta como *ScreenToGif* para gravar 10 segundos de você cadastrando um pavê e coloque no README. Isso prova que o sistema funciona de ponta a ponta.
-3.  **About (Sobre):** No lado direito do seu repositório no GitHub, preencha a descrição, coloque as *tags* (dotnet, csharp, azure, mvc) e o link do site da Azure que agora está funcionando!
-
-
-
-**Gostaria que eu fizesse alguma alteração ou adicionasse alguma seção específica sobre os desafios que tivemos com a autenticação da Azure?** Isso demonstraria muita maturidade técnica!
-
-```
