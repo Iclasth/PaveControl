@@ -7,6 +7,7 @@
 O **PaveControl** é uma aplicação web completa desenvolvida para o gerenciamento de inventário e vendas de pavês artesanais. O projeto foi desenhado seguindo as melhores práticas da arquitetura MVC, com foco em escalabilidade e deploy em nuvem.
 
 ![PaveControl: Home em funcionamento](imgs/PaveControlHomeScreenshot.png)
+![PaveControl: Gerenciamento de Pavês em funcionamento](imgs/PaveControlGerenScreenshot.png)
 
 ---
 
