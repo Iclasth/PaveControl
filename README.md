@@ -13,7 +13,7 @@ O **PaveControl** é uma aplicação web completa desenvolvida para o gerenciame
 
 ## 🚀 Status do Projeto: Em Produção
 A aplicação está hospedada na Azure e pode ser acessada em:  
-🔗 [https://pavecontrol-iclas.azurewebsites.net/](https://pavecontrol-iclas-bec0fndshxh5byak.canadacentral-01.azurewebsites.net/) *(Ajuste se o link for diferente)*
+🔗 [https://pavecontrol-iclas.azurewebsites.net/](https://pavecontrol-iclas-bec0fndshxh5byak.canadacentral-01.azurewebsites.net/) 
 
 ---
 
@@ -71,4 +71,4 @@ Neste projeto, superei desafios reais de infraestrutura de nuvem, incluindo:
 * Resolução de problemas de **autenticação via tokens** entre serviços PaaS.
 * Implementação de rotinas automáticas de migração de banco de dados via código no `Program.cs`.
 
-```
+
